@@ -75,7 +75,7 @@ def dig(url_list):
 
             actions = ActionChains(driver)
             for _ in range(5):
-
+                print("Action X")
                 rand_x = random.randint(0, window_width - 1)
                 rand_y = random.randint(0, window_height - 1)
                 
@@ -83,7 +83,7 @@ def dig(url_list):
                 
                 # Reset mouse position (avoiding cumulative offsets)
                 actions.move_by_offset(-rand_x, -rand_y).perform()
-
+            print("Finished sim")
 
             post_interact_cookies = len(driver.get_cookies())
             print(pre_interact_cookies)
@@ -99,9 +99,9 @@ def dig(url_list):
             jsa_count += len(analytics_script)
 
             # due to random clicks possibly creating more tabs, clear all but 1 tab
-            num_of_tabs = ...
+            num_of_tabs = len(driver.window_handles)
             for x in range(1, num_of_tabs):
-                self.driver.find_element_by_tag_name('body').send_keys(Keys.COMMAND + 'W')
+                driver.find_element("tag name", "body").send_keys(Keys.COMMAND + 'W')
 
         except Exception as e:
             print("Error on " + url + " | " + str(e))
