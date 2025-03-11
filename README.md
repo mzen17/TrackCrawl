@@ -5,7 +5,7 @@ Author: Mike Zeng
 
 
 ### Previous Work: Understanding the Effect of GDPR-like Policies for Cookies in Web Applications
-Note: This project is a reference of TrackCrawler. TrackCrawler is a complete rework of the old scrapper including a significantly wider scope for research. 
+> Note: This project is a reference for TrackCrawler. TrackCrawler is a complete rework of the old scrapper including a significantly wider scope for research and a different research purpose (understanding tracking at a wider scale vs just cookies).
 
 A web scrapper for understanding cookies. This is the codebase for our paper "Understanding the Effect of GDPR-like Policies for Cookies in Web Applications".
 
