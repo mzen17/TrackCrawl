@@ -96,7 +96,7 @@ def dig(url_list):
             analytics_scripts = [script for script in script_tags if 'analytics' in (script.get_attribute("src") or "").lower()]
 
             js_count += len(script_tags)
-            jsa_count += len(analytics_script)
+            jsa_count += len(analytics_scripts)
 
             # due to random clicks possibly creating more tabs, clear all but 1 tab
             num_of_tabs = len(driver.window_handles)
