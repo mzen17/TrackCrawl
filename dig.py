@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 # 2) Chrome is installed.
 
 options = webdriver.ChromeOptions()
-#options.add_argument('--headless')  # Run Chrome in headless mode (no GUI)
+options.add_argument('--headless')  # Run Chrome in headless mode (no GUI)
 options.add_argument('--disable-gpu')  # Disable GPU acceleration
 options.add_argument('--no-sandbox')  # Disable sandboxing for Linux
 driver = webdriver.Chrome(options=options)
@@ -18,7 +18,7 @@ driver.set_page_load_timeout(10)
 
 
 # function for obtaining tranco list when in CSV format.
-with open("TrancoT1000.txt", newline='', encoding='utf-8') as f:
+with open("top-1m.csv", newline='', encoding='utf-8') as f:
     reader = csv.reader(f)
     urls = [row[1] for row in reader if len(row) > 1]
     
@@ -40,7 +40,7 @@ print(len(normal_urls))
 print(len(gdpr_urls))
 
 # Take Top 100 from each
-scale = 10
+scale = 100
 normal_urls = normal_urls[:scale]
 gdpr_urls = gdpr_urls[:scale]
 
@@ -91,6 +91,12 @@ def dig(url_list):
 
             pre_cookie_count += pre_interact_cookies
             post_cookie_count += post_interact_cookies
+
+            script_tags = driver.find_elements(By.TAG_NAME, "script")
+            analytics_scripts = [script for script in script_tags if 'analytics' in (script.get_attribute("src") or "").lower()]
+
+            js_count += len(script_tags)
+            jsa_count += len(analytics_script)
 
             # due to random clicks possibly creating more tabs, clear all but 1 tab
             num_of_tabs = ...

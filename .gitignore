@@ -1,2 +1,6 @@
 .venv
+*.zip
+5896N
+chromedriver-linux64*
+top-1m.csv
 TrancoT1000.txt
