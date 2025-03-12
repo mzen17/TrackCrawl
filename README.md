@@ -1,6 +1,8 @@
 # TrackCrawler
 TrackCrawler is an optimized crawler through dynamic interactions + preference counting to understand changes in tracking in modern web applications from GDPR. This serves as the codebase for TrackCrawler.
 
+![image](https://github.com/user-attachments/assets/27cecf43-32aa-40a4-b497-547951f32e4e)
+
 Author: Mike Zeng
 
 
